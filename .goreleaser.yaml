@@ -1,0 +1,16 @@
+version: 2
+
+project_name: go-mmproxy
+builds:
+  - env: [CGO_ENABLED=0]
+    goos:
+      - linux
+    goarch:
+      - amd64
+      - arm64
+    mod_timestamp: "{{ .CommitTimestamp }}"
+    flags:
+      - -trimpath
+checksum:
+  name_template: "SHA256SUMS"
+  algorithm: sha256
